@@ -14,7 +14,11 @@ const imageSchema = new Schema({
 	mimetype:{type: String},
 	path:{type: String},
 	size:{type: Number},
-	created_at: {type: Date, default: Date.now}
+	created_at: {type: Date, default: Date.now},
+	status:{
+		type: Boolean,
+		default: false
+	}
 });
 
 module.exports=mongoose.model('Image',imageSchema);

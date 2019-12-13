@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+        <head>
+                <meta charset="utf-8">
+                <meta name="author"content="walter">
+                <title>PublicPhotho</title>
+                <link rel="stylesheet" href="/css/main.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+        </head>
+        <body class="animated rotateInDownRight">
+                <nav class="navbar navbar-light"style="background-color: #e3f2fd;">
+                        <a class="navbar-brand"href="/">Inicio</a>
+                        <a class="navbar-brand"href="/signup">Registrate</a>
+                        <a class="navbar-brand"href="/signin">Inicia Secion</a>
+                </nav>
+                <br><center><h1>Perfil Completo</h1></center>
+		<div class="card mb-3 mx-auto"style="max-width: 540px;">
+			<div class="row no-gutters mx-auto">
+				<div class="col-md-4 mx-auto">
+					<img src="<%= image.path %>"class="card-img"alt="<%= image.filename  %>">
+				</div>
+				<div class="col-md-8 mx-auto">
+					<div class="card-body mx-auto">
+						<h4 class="card-subtitle">Perfil</h4>
+						<p class="card-text">nombre: <%= image.name %></p>
+						<p class="card-text">religion: <%= image.religion  %></p>
+						<p class="card-text">Persona Favorita: <%= image.favorite  %></p>
+						<p class="card-text">El Se Describe: <%= image.personal %></p>
+						<a class="btn btn-danger btn-block"href="/delete/<%= image._id %>">Eliminar</a>
+						<p class="card-text"><small class="text-muted"><%=format(image.created_at)%></small></p>
+					</div>
+				</div>
+				  <div class="col-md-8 mx-auto">
+                                        <div class="card-body mx-auto">
+						<p>
+						Likes <span class="likes-count">5</span>
+						<i class="fas fa-heart"></i>
+						</p>
+						<p>
+						Visitas Al Perfil <span class="likes-count">10</span>
+						<i class="fas fa-eye"></i>
+						</p>
+						<p>
+					</div>
+				  </div>
+			</div>
+		</div>
+	</body>
+</html>

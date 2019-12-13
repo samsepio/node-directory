@@ -4,6 +4,7 @@ const morgan=require('morgan');
 const mongoose=require('mongoose');
 const engine=require('ejs');
 const multer=require('multer');
+const {format}=require('timeago.js');
 const uuid=require('uuid/v4');
 const app=express();
 
@@ -18,14 +19,19 @@ app.set('views',path.join(__dirname,'./views'));
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
 const storage = multer.diskStorage({
-	destination: path.join(__dirname,'public/img/uplods'),
+	destination: path.join(__dirname,'public/img/uploads'),
 	filename: (req,file,cb,filename) => {
-		cb(null,uuid()+path.extname(file.originalname));
+		cb(null, uuid() + path.extname(file.originalname));
 	}
 });
 app.use(multer({
 	storage
 }).single('image'));
+//creamos una variable que sea accesible desde cualquier lugar de la aplicacion la cual se llamara format y le pasamos format que ya lo habiamos requierido esto para despues pasarselo a la vistas
+app.use((req,res,next)=>{
+	app.locals.format = format;
+	next();
+});
 app.use(require('./routes'));
 
 app.use(express.static(path.join(__dirname,'./public')));

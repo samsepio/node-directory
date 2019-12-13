@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+        <head>
+                <meta charset="utf-8">
+                <meta name="author"content="walter">
+                <title>PublicPhotho</title>
+                <link rel="stylesheet" href="/css/main.css">
+                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+        </head>
+        <body>
+                <nav class="navbar navbar-light"style="background-color: #e3f2fd;">
+                        <a class="navbar-brand"href="/">Inicio</a>
+                        <a class="navbar-brand"href="/signup">Registrate</a>
+                        <a class="navbar-brand"href="/signin">Inicia Secion</a>
+                </nav>
+                <br><center><h1>Comenta Este Perfil</h1></center>
+		 <div class="card mb-3 mx-auto" style="max-width: 540px;">
+			 <div class="row no-gutters">
+				 <div class="col-md-4 ">
+					 <form action="/comentary"method="POST">
+						 <label>Nombre</label>
+						 <input type="text"class="form-control"name="name"placeholder="Ingrese Su Nombre">
+						 <label>Comentario</label>
+						 <textarea name="comentary"class="form-control"placeholder="Comentario..."></textarea>
+						 <br><button class="btn btn-primary btn-block">
+							 <i class="fas fa-comment-dots"></i>Publicar
+						 </button>
+					 </form>
+				 </div>
+				 <div class="col-md-8">
+					 <div class="card-body">
+						 <h4 class="card-subtitle">Comentarios</h4>
+						 <p class="card-text"><%= comentarys.name %></p>
+						 <p class="card-text"><%= comentarys.comentary  %></p>
+					 </div>
+				 </div>
+			 </div>
+		 </div>
+	</body>
+</html>
